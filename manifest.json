@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Finviz to AlphaSpread",
+  "version": "1.0.0",
+  "description": "Add a button on Finviz screener results to open in AlphaSpread",
+  "permissions": [
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://finviz.com/*",
+    "https://*.finviz.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://finviz.com/screener.ashx*",
+        "https://*.finviz.com/screener.ashx*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
+
